@@ -4,10 +4,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.orderserver.domain.TbOrder;
 import com.example.orderserver.service.TbOrderService;
 import com.example.orderserver.mapper.TbOrderMapper;
-import jakarta.validation.constraints.Size;
+import com.example.userserver.domain.TbUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
 * @author YG
@@ -21,15 +25,23 @@ public class TbOrderServiceImpl extends ServiceImpl<TbOrderMapper, TbOrder>
 
     @Autowired
     TbOrderMapper tbOrderMapper;
-
+    @Autowired
+    private RestTemplate restTemplate;
 
     //测试获取数据
     @Override
-    public TbOrder getOrder(Integer id) {
-        log.info(String.valueOf(id));
+    public Map<String, Object> getOrder(Integer id) {
         TbOrder tbOrder = tbOrderMapper.selectById(id);
-        log.info(String.valueOf(tbOrder));
-        return tbOrder;
+        log.info("tbOrder:{}",tbOrder);
+        int userId = tbOrder.getUserId();
+        String url = "http://localhost:8082/TbUser/"+userId;
+        log.info("url:{}",url);
+        TbUser tbUser = restTemplate.getForObject(url, TbUser.class);
+        log.info("tbUser:{}",tbUser);
+        Map<String,Object> map = new HashMap<>();
+        map.put("tbOrder",tbOrder);
+        map.put("tbUser",tbUser);
+        return map;
     }
 }
 

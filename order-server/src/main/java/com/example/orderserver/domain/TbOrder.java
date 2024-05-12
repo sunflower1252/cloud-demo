@@ -18,12 +18,12 @@ public class TbOrder implements Serializable {
      * 订单id
      */
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Integer id;
 
     /**
      * 用户id
      */
-    private Long userId;
+    private Integer userId;
 
     /**
      * 商品名称

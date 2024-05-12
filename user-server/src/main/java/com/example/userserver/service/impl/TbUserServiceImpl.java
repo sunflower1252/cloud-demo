@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.userserver.domain.TbUser;
 import com.example.userserver.service.TbUserService;
 import com.example.userserver.mapper.TbUserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +16,12 @@ import org.springframework.stereotype.Service;
 public class TbUserServiceImpl extends ServiceImpl<TbUserMapper, TbUser>
     implements TbUserService {
 
+    @Autowired
+    TbUserMapper tbUserMapper;
+    @Override
+    public TbUser getTbUser(Integer userid) {
+        return tbUserMapper.selectById(userid);
+    }
 }
 
 

@@ -3,6 +3,8 @@ package com.example.orderserver.service;
 import com.example.orderserver.domain.TbOrder;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.Map;
+
 /**
 * @author YG
 * @description 针对表【tb_order】的数据库操作Service
@@ -11,5 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface TbOrderService extends IService<TbOrder> {
 
     //测试获取数据
-    TbOrder getOrder(Integer id);
+    Map<String, Object> getOrder(Integer id);
 }

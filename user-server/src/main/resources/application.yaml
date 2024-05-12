@@ -1,6 +1,6 @@
 #服务端口，随便起
 server:
-  port: 8081
+  port: 8082
 #服务名称
 spring:
   application:
@@ -14,4 +14,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:11011/eureka/
+      defaultZone: http://127.0.0.1:6379/eureka/

@@ -1,6 +1,6 @@
 package com.example.orderserver.controller;
 
-import com.example.orderserver.domain.TbOrder;
+import com.example.orderserver.common.Result;
 import com.example.orderserver.service.TbOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ public class TbOrderController {
 
     //测试获取数据
     @GetMapping("/getOrder")
-    public TbOrder getOrder(@RequestParam Integer id) {
-        return tbOrderService.getOrder(id);
+    public Result getOrder(@RequestParam Integer id) {
+        return Result.success(tbOrderService.getOrder(id));
     }
 }
