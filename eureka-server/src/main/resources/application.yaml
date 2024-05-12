@@ -1,0 +1,19 @@
+#port
+server:
+  port: 6379
+#spring
+spring:
+  application:
+    name: eureka-server
+  datasource:
+    url: jdbc:mysql://localhost:3306
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6379/eureka/
+    register-with-eureka: false
+    fetch-registry: false
