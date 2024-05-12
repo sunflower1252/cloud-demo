@@ -1,0 +1,17 @@
+#port
+server:
+  port: 8080
+#spring
+spring:
+  application:
+    name: order-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/cloud-order
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#eureka地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6379/eureka/
