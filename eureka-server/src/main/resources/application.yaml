@@ -4,7 +4,7 @@ server:
 #spring
 spring:
   application:
-    name: eureka-server
+    name: eurekaserver
   datasource:
     url: jdbc:mysql://localhost:3306
     username: root
@@ -15,5 +15,5 @@ eureka:
   client:
     service-url:
       defaultZone: http://127.0.0.1:6379/eureka/
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false

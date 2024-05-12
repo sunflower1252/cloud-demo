@@ -4,7 +4,7 @@ server:
 #服务名称
 spring:
   application:
-    name: user-server
+    name: userserver
   datasource:
     url: jdbc:mysql://localhost:3306/cloud-user
     username: root

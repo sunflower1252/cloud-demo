@@ -2,8 +2,8 @@ package com.example.orderserver.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.orderserver.domain.TbOrder;
-import com.example.orderserver.service.TbOrderService;
 import com.example.orderserver.mapper.TbOrderMapper;
+import com.example.orderserver.service.TbOrderService;
 import com.example.userserver.domain.TbUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +34,7 @@ public class TbOrderServiceImpl extends ServiceImpl<TbOrderMapper, TbOrder>
         TbOrder tbOrder = tbOrderMapper.selectById(id);
         log.info("tbOrder:{}",tbOrder);
         int userId = tbOrder.getUserId();
-        String url = "http://localhost:8082/TbUser/"+userId;
+        String url = "http://user-server/TbUser/" + userId;
         log.info("url:{}",url);
         TbUser tbUser = restTemplate.getForObject(url, TbUser.class);
         log.info("tbUser:{}",tbUser);
