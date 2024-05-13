@@ -34,7 +34,7 @@ public class TbOrderServiceImpl extends ServiceImpl<TbOrderMapper, TbOrder>
         TbOrder tbOrder = tbOrderMapper.selectById(id);
         log.info("tbOrder:{}",tbOrder);
         int userId = tbOrder.getUserId();
-        String url = "http://user-server/TbUser/" + userId;
+        String url = "http://" + "userserver" + "/TbUser/" + userId;
         log.info("url:{}",url);
         TbUser tbUser = restTemplate.getForObject(url, TbUser.class);
         log.info("tbUser:{}",tbUser);

@@ -14,7 +14,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class OrderServerApplication {
 
     public static void main(String[] args) {
-        System.out.println("order-server启动成功");
+        System.out.println("orderserver启动成功");
         SpringApplication.run(OrderServerApplication.class, args);
     }
 
