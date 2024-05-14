@@ -9,7 +9,11 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 /**
  * @author YG
  */
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.example.feignapi.client")
+/*
+ * 加上(basePackages = "com.example.feignapi.client")是因为feign之前启动的时候，client包是在同一个模块里面，所以不需要加
+ * 但是现在client在feign-api模块里面，所以需要添加，扩大spring的扫描路径
+ */
 @EnableEurekaServer
 @SpringBootApplication
 @MapperScan("com.example.orderserver.mapper")

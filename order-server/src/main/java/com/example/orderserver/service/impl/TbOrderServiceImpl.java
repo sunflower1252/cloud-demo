@@ -1,11 +1,11 @@
 package com.example.orderserver.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.orderserver.client.UserClient;
+import com.example.feignapi.client.UserClient;
+import com.example.feignapi.domain.TbUser;
 import com.example.orderserver.domain.TbOrder;
 import com.example.orderserver.mapper.TbOrderMapper;
 import com.example.orderserver.service.TbOrderService;
-import com.example.userserver.domain.TbUser;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
