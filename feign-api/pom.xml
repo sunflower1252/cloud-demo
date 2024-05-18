@@ -28,13 +28,14 @@
             <scope>test</scope>
         </dependency>
 
-        <!--feign客户端-->
+        <!--feign客户端，用来调用其他服务的接口-->
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-openfeign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>4.0.2</version>
         </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-annotation</artifactId>

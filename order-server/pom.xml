@@ -17,10 +17,16 @@
         <spring-cloud.version>2023.0.1</spring-cloud.version>
     </properties>
     <dependencies>
-        <!--eureka客户端-->
+        <!--eureka客户端，实现服务间的通信-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--注解@EnableEurekaServer使用，将此模块注册到注册中心中-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
         </dependency>
 
         <!--feign客户端-->
@@ -34,11 +40,6 @@
             <groupId>com.example</groupId>
             <artifactId>feign-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-netflix-eureka-server</artifactId>
         </dependency>
 
         <dependency>
